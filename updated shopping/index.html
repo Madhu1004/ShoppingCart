@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login and Signup Page</title>
+</head>
+<body>
+    <div class="container">
+        <div id="tabs">
+            <button class="tab" onclick="openTab('signupTab')">Signup</button>
+            <button class="tab" onclick="openTab('loginTab')">Login</button>
+        </div>
+
+        <div id="signupTab" class="tab-content">
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <label for="username">Username:</label>
+                <input type="text" id="signupUsername" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="signupEmail" name="email" required>
+
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="signupPassword" name="password" required>
+                    <input type="checkbox" id="showSignupPassword" onclick="togglePasswordVisibility('signupPassword')">
+                    <label for="showSignupPassword">Show Password</label>
+                </div>
+
+                <button type="button" onclick="validateAndSignup()">Sign Up</button>
+            </form>
+
+            <p id="signupResponseMessage"></p>
+        </div>
+
+        <div id="loginTab" class="tab-content" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+
+                <label for="loginPassword">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="loginPassword" name="password" required>
+                    <input type="checkbox" id="showLoginPassword" onclick="togglePasswordVisibility('loginPassword')">
+                    <label for="showLoginPassword">Show Password</label>
+                </div>
+
+                <button type="button" onclick="validateAndLogin()">Login</button>
+            </form>
+
+            <p id="loginResponseMessage"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
